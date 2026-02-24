@@ -1,0 +1,81 @@
+account_id,account_name,plan_tier,region,seats_purchased,account_status,created_at_utc
+acc_0001,Sanchez PLC,starter,NA,15,active,2025-10-16 00:00:00+00:00
+acc_0002,Lopez-Martinez,starter,NA,14,active,2025-08-10 00:00:00+00:00
+acc_0003,"Johns, Sparks and Miller",starter,LATAM,5,active,2025-09-08 00:00:00+00:00
+acc_0004,Chung-Flores,growth,EMEA,22,active,2025-10-14 00:00:00+00:00
+acc_0005,"White, Arnold and Quinn",starter,EMEA,3,active,2025-11-17 00:00:00+00:00
+acc_0006,Erickson-Williams,enterprise,NA,133,active,2025-08-15 00:00:00+00:00
+acc_0007,Lawrence LLC,enterprise,APAC,172,active,2025-09-23 00:00:00+00:00
+acc_0008,Lee-Horn,growth,EMEA,59,active,2025-10-10 00:00:00+00:00
+acc_0009,"Schmidt, Daniel and Bird",starter,EMEA,5,active,2025-09-26 00:00:00+00:00
+acc_0010,"Brown, Nguyen and Cook",growth,APAC,22,active,2025-11-13 00:00:00+00:00
+acc_0011,Frye LLC,growth,NA,41,active,2026-01-24 00:00:00+00:00
+acc_0012,"Robertson, Ramirez and Nelson",starter,NA,13,active,2025-11-01 00:00:00+00:00
+acc_0013,"Lopez, Williams and Schmidt",starter,NA,7,active,2025-12-09 00:00:00+00:00
+acc_0014,Barnes LLC,starter,NA,11,active,2025-10-05 00:00:00+00:00
+acc_0015,"Mitchell, Khan and Sanders",starter,LATAM,11,active,2026-01-14 00:00:00+00:00
+acc_0016,Parker LLC,growth,NA,19,active,2025-11-05 00:00:00+00:00
+acc_0017,Aguilar-Evans,starter,LATAM,3,active,2025-11-27 00:00:00+00:00
+acc_0018,"Hoffman, Rose and Todd",starter,EMEA,4,active,2025-12-07 00:00:00+00:00
+acc_0019,"Simmons, Davis and Wallace",starter,NA,10,active,2025-12-25 00:00:00+00:00
+acc_0020,Reynolds Group,enterprise,LATAM,190,active,2025-11-29 00:00:00+00:00
+acc_0021,Noble and Sons,starter,NA,8,active,2025-08-19 00:00:00+00:00
+acc_0022,"Allen, Smith and Stevens",starter,NA,2,active,2025-08-28 00:00:00+00:00
+acc_0023,Jackson PLC,starter,EMEA,15,active,2026-01-14 00:00:00+00:00
+acc_0024,Bailey-Murphy,starter,EMEA,6,active,2025-11-11 00:00:00+00:00
+acc_0025,Soto-Wallace,growth,NA,52,active,2025-08-03 00:00:00+00:00
+acc_0026,Nichols Ltd,starter,APAC,2,active,2025-08-13 00:00:00+00:00
+acc_0027,"Harris, Steele and Williams",growth,EMEA,25,active,2025-10-13 00:00:00+00:00
+acc_0028,Martinez-Hernandez,starter,EMEA,5,active,2025-11-27 00:00:00+00:00
+acc_0029,"Murray, Bradford and Jimenez",growth,EMEA,16,active,2025-08-11 00:00:00+00:00
+acc_0030,"Taylor, Mitchell and Sutton",growth,NA,25,active,2025-08-08 00:00:00+00:00
+acc_0031,Alvarez-Jones,growth,NA,41,active,2025-12-15 00:00:00+00:00
+acc_0032,"Gomez, Mueller and Weiss",starter,LATAM,13,active,2025-11-11 00:00:00+00:00
+acc_0033,"Green, Wilson and Lopez",starter,EMEA,5,active,2026-01-12 00:00:00+00:00
+acc_0034,Walters-Peterson,growth,APAC,19,active,2025-09-12 00:00:00+00:00
+acc_0035,Fuller PLC,enterprise,NA,113,active,2026-01-18 00:00:00+00:00
+acc_0036,Graves-Thompson,growth,NA,21,active,2025-08-09 00:00:00+00:00
+acc_0037,Coffey LLC,starter,NA,14,active,2025-11-30 00:00:00+00:00
+acc_0038,"Wilson, Robinson and Scott",starter,EMEA,9,active,2025-10-29 00:00:00+00:00
+acc_0039,White LLC,starter,NA,11,active,2025-09-14 00:00:00+00:00
+acc_0040,Carpenter PLC,growth,LATAM,24,active,2025-09-26 00:00:00+00:00
+acc_0041,Powell Inc,growth,EMEA,37,active,2025-12-24 00:00:00+00:00
+acc_0042,"Odonnell, Warren and White",starter,NA,9,active,2025-08-11 00:00:00+00:00
+acc_0043,Gray PLC,enterprise,EMEA,159,active,2025-10-08 00:00:00+00:00
+acc_0044,Harris Group,growth,NA,18,active,2025-12-22 00:00:00+00:00
+acc_0045,"Reyes, Christensen and Robbins",growth,EMEA,32,active,2025-09-07 00:00:00+00:00
+acc_0046,King-Small,enterprise,NA,87,active,2025-09-12 00:00:00+00:00
+acc_0047,Adams Inc,growth,EMEA,57,active,2026-01-22 00:00:00+00:00
+acc_0048,"Knight, White and Nixon",starter,EMEA,6,active,2025-11-30 00:00:00+00:00
+acc_0049,Brown-Jimenez,starter,NA,13,active,2025-09-11 00:00:00+00:00
+acc_0050,"Ramirez, Boone and Graves",growth,NA,48,active,2025-10-16 00:00:00+00:00
+acc_0051,Miranda-Smith,growth,EMEA,19,active,2025-09-28 00:00:00+00:00
+acc_0052,"Cain, Chavez and Stanley",enterprise,NA,176,active,2025-12-24 00:00:00+00:00
+acc_0053,Nichols-Taylor,enterprise,EMEA,115,active,2025-08-05 00:00:00+00:00
+acc_0054,Green-Maddox,starter,EMEA,4,active,2025-09-25 00:00:00+00:00
+acc_0055,"Smith, James and Bowman",enterprise,NA,170,active,2025-10-05 00:00:00+00:00
+acc_0056,Mathis PLC,enterprise,EMEA,131,active,2025-08-24 00:00:00+00:00
+acc_0057,"Holland, Ramirez and Richard",starter,EMEA,9,active,2026-01-09 00:00:00+00:00
+acc_0058,Lopez-Ramirez,growth,NA,54,active,2025-10-03 00:00:00+00:00
+acc_0059,Bailey PLC,growth,LATAM,16,active,2025-10-02 00:00:00+00:00
+acc_0060,Horton-Roth,starter,NA,9,active,2025-12-03 00:00:00+00:00
+acc_0061,"Lee, Sullivan and Sawyer",starter,LATAM,7,active,2025-09-25 00:00:00+00:00
+acc_0062,Hughes Ltd,starter,NA,13,active,2025-09-27 00:00:00+00:00
+acc_0063,"Lee, Martin and Williams",starter,NA,3,active,2025-10-24 00:00:00+00:00
+acc_0064,Morgan-Brown,starter,NA,13,active,2025-12-30 00:00:00+00:00
+acc_0065,"Montes, Hernandez and Grant",growth,LATAM,22,active,2025-12-27 00:00:00+00:00
+acc_0066,"Smith, Morris and Miranda",growth,APAC,30,active,2025-10-04 00:00:00+00:00
+acc_0067,Fry Ltd,growth,NA,53,active,2025-10-31 00:00:00+00:00
+acc_0068,Roman Inc,starter,EMEA,10,active,2025-09-05 00:00:00+00:00
+acc_0069,Duncan and Sons,starter,NA,15,active,2025-09-14 00:00:00+00:00
+acc_0070,Wagner-Mays,starter,NA,9,active,2025-11-14 00:00:00+00:00
+acc_0071,Andrews-Fox,starter,NA,10,active,2025-09-14 00:00:00+00:00
+acc_0072,"Cook, Waller and David",enterprise,EMEA,89,active,2025-11-13 00:00:00+00:00
+acc_0073,"Williams, Young and Hunt",starter,NA,12,active,2025-12-20 00:00:00+00:00
+acc_0074,Shelton-Smith,growth,EMEA,48,active,2025-11-16 00:00:00+00:00
+acc_0075,Brown LLC,growth,APAC,46,active,2025-12-10 00:00:00+00:00
+acc_0076,Small-Zuniga,growth,NA,55,active,2025-08-05 00:00:00+00:00
+acc_0077,Garcia Group,growth,NA,17,active,2025-11-10 00:00:00+00:00
+acc_0078,Ellison-Moore,enterprise,LATAM,66,active,2025-11-06 00:00:00+00:00
+acc_0079,Perry-Gomez,starter,NA,9,active,2025-12-21 00:00:00+00:00
+acc_0080,Parker-Weaver,growth,EMEA,58,active,2025-11-18 00:00:00+00:00
