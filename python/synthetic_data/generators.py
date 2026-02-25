@@ -16,6 +16,7 @@ from .config import (
     TASK_PRIORITY_PROBS,
     BLOCKER_RATE,
     MISSING_ASSIGNEE_RATE,
+    OUTLIER_TASK_RATE,
     LATE_EVENT_PROFILE,
     EVENT_TAXONOMY,
 )
@@ -51,7 +52,7 @@ def generate_accounts(
         "plan_tier":       plans,
         "region":          regions,
         "seats_purchased": seats,
-        "account_status":  "active", # All accounts active for MVP, Keeping data-model structure
+        "account_status":  "active", # All accounts active for MVP
         "created_at_utc":  created_at,
     })
     
@@ -151,7 +152,7 @@ def generate_projects(
     account_owners = users.groupby("account_id")["user_id"].apply(list).to_dict()
     owner_ids = [rng.choice(account_owners[aid]) for aid in account_ids]
 
-    return pd.DataFrame({
+    projects =  pd.DataFrame({
         "project_id":       [f"prj_{i:05d}" for i in range(1, n_total + 1)],
         "account_id":       account_ids,
         "owner_user_id":    owner_ids,
@@ -159,6 +160,8 @@ def generate_projects(
         "created_at_utc":   created_at,
         "completed_at_utc": completed_at,
     }).reset_index(drop=True)
+    
+    return projects
 
 def generate_tasks(
     projects: pd.DataFrame,
@@ -187,6 +190,16 @@ def generate_tasks(
         .clip(upper=end)
     )
     due_at = start_at + pd.to_timedelta(rng.integers(3, 22, size=n_total), unit="D")
+    
+    ## Outlier due dates (60-180 extra days)
+    outlier_mask = rng.random(size=n_total) < OUTLIER_TASK_RATE
+    due_at = pd.DatetimeIndex(
+        np.where(
+            outlier_mask,
+            start_at + pd.to_timedelta(rng.integers(60, 181, size=n_total), unit="D"),
+            due_at,
+        )
+    )
 
     # status & completed_at
     statuses     = rng.choice(TASK_STATUSES, size=n_total, p=TASK_STATUS_PROBS)
@@ -213,8 +226,7 @@ def generate_tasks(
         for pool in user_pool
     ]
     
-
-    return pd.DataFrame({
+    tasks = pd.DataFrame({
         "task_id":            [f"tsk_{i:06d}" for i in range(1, n_total + 1)],
         "account_id":         account_ids,
         "project_id":         project_ids,
@@ -228,6 +240,8 @@ def generate_tasks(
         "due_at_utc":         due_at,
         "completed_at_utc":   completed_at,
     }).reset_index(drop=True)
+    
+    return tasks
     
 def generate_events(
     users: pd.DataFrame,
@@ -278,7 +292,7 @@ def generate_events(
     account_users = users.groupby("account_id")["user_id"].apply(list).to_dict()
     user_ids      = [rng.choice(account_users[aid]) for aid in account_ids]
 
-    return pd.DataFrame({
+    events = pd.DataFrame({
         "event_id":        [f"evt_{i:07d}" for i in range(1, n_total + 1)],
         "account_id":      account_ids,
         "user_id":         user_ids,
@@ -288,4 +302,6 @@ def generate_events(
         "event_at_utc":    event_at,
         "ingested_at_utc": ingested_at,
     }).reset_index(drop=True)
-  
+    
+    return events
+    
