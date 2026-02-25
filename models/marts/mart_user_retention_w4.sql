@@ -1,3 +1,5 @@
+-- Grain: 1 row per cohort_week_start_utc x plan_tier x region x role_type
+
 select
     cohort_week_start_utc,
     plan_tier,

@@ -1,3 +1,5 @@
+-- Grain: 1 row per week_start_utc x plan_tier x region x role_type
+
 with base as (
     select
         activity_week_start_utc as week_start_utc,

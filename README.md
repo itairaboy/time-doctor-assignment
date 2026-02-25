@@ -2,40 +2,66 @@
 
 This repository contains my work for the Senior Data Analyst assignment.
 
-## Current Status
-- Stage 1: planning and data model skeleton
-- Stage 2: synthetic data generation in progress
-- Stage 3: SQL transformation MVP in progress
+## Context
 
-## Scenario
-- B2B Project Management SaaS (Jira-inspired)
-- Focus on workflow outcomes: usage, engagement, retention, productivity
+- Scenario: B2B Project Management SaaS (Jira-inspired)
+- Focus: product usage, engagement, retention, and productivity
 - Out of scope: employee monitoring and time tracking
 
-## Project Structure
-- `docs/` - assumptions, model, and generation notes
-- `python/synthetic_data/config.py` - generation configuration
-- `python/synthetic_data/generators.py` - entity/event generators
-- `python/synthetic_data/main.py` - orchestration and export
-- `models/` - SQL transformation assets
+## Progress by Stage
+
+- Stage 1 - Setup and data model: completed
+- Stage 2 - Synthetic data: completed
+- Stage 3 - Transformations and metrics: in progress (MVP implemented)
+- Stage 4 - Dashboard: pending
+- Stage 5 - Monitoring and recommendations: pending
+
+## Repository Structure
+
+- `docs/data-model.md` - entities, relationships, taxonomy, and assumptions
+- `docs/data-gen.md` - generation plan, parameters, imperfections, and guardrails
+- `docs/assumptions-metrics-log.md` - assumptions and metrics log
+- `python/synthetic_data/` - synthetic data generators and config
+- `python/pipeline/run_models.py` - SQL model runner (DuckDB)
+- `models/staging/` - raw standardization models (`stg_*`)
+- `models/intermediate/` - enriched and metric-foundation models (`int_*`)
+- `models/marts/` - analytics-ready marts (`mart_*`)
+- `data/raw/` - generated raw CSV files
+- `data/project.duckdb` - local DuckDB database
 
 ## Generate Synthetic Data
-From the repository root:
+
+From repository root:
 
 ```bash
 PYTHONPATH=python .venv/bin/python -m synthetic_data.main
 ```
 
-If you are not using the virtual environment executable explicitly:
+Alternative:
 
 ```bash
 PYTHONPATH=python python3 -m synthetic_data.main
 ```
 
-## Output
 Generated raw files are written to:
+
 - `data/raw/accounts.csv`
 - `data/raw/users.csv`
 - `data/raw/projects.csv`
 - `data/raw/tasks.csv`
 - `data/raw/events.csv`
+
+## Run Transformations
+
+Build all SQL layers into DuckDB:
+
+```bash
+.venv/bin/python python/pipeline/run_models.py
+```
+
+The pipeline builds:
+
+- Staging views (`stg_*`)
+- Intermediate views (`int_*`) using dependency-aware ordering
+- Mart tables (`mart_*`)
+
