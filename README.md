@@ -18,13 +18,13 @@ This repository contains my end-to-end work for a Senior Data Analyst assignment
 
 ## Repository Structure
 
-- `docs/data-model.md` - canonical entities, relationships, taxonomy
-- `docs/data-gen.md` - synthetic generation parameters and imperfections
-- `docs/assumptions-metrics-log.md` - assumptions and metrics log
-- `docs/kpi-definitions.md` - KPI relevance and limitations
+- [docs/data-model.md](docs/data-model.md) - canonical entities, relationships, taxonomy
+- [docs/data-gen.md](docs/data-gen.md) - synthetic generation parameters and imperfections
+- [docs/assumptions-metrics-log.md](docs/assumptions-metrics-log.md) - assumptions and metrics log
+- [docs/kpi-definitions.md](docs/kpi-definitions.md) - KPI relevance and limitations
 - `python/synthetic_data/` - synthetic data generators and config
-- `python/pipeline/run_models.py` - builds SQL models into DuckDB
-- `python/pipeline/publish_to_postgres.py` - publishes marts to Postgres `reporting` schema
+- [python/pipeline/run_models.py](python/pipeline/run_models.py) - builds SQL models into DuckDB
+- [python/pipeline/publish_to_postgres.py](python/pipeline/publish_to_postgres.py) - publishes marts to Postgres `reporting` schema
 - `models/staging/` - raw standardization models (`stg_*`)
 - `models/intermediate/` - enriched metric foundations (`int_*`)
 - `models/marts/` - analytics-ready marts (`mart_*`)
@@ -32,6 +32,7 @@ This repository contains my end-to-end work for a Senior Data Analyst assignment
 - `data/raw/` - generated source CSVs
 - `data/pipeline.duckdb` - transformation database
 - `data/reporting.duckdb` - optional BI copy
+- [dashboard/screenshots](dashboard/screenshots/) - Dashboard screenshots
 
 ## Quickstart
 

@@ -11,7 +11,7 @@
 - Time standard: UTC
 - Out of scope: employee monitoring, time tracking
 
-Note: relationships and logic live in `docs/data-model.md`.
+Note: relationships and logic live in [docs/data-model.md](../docs/data-model.md).
 
 ## Generation Parameters
 
