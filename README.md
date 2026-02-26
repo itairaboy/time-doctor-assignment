@@ -71,6 +71,9 @@ docker compose up -d
 - Password: `reporting_pass`
 - Schema: `reporting`
 
+## Raw Data Model
+![Data Model Diagram](/docs/diagrams/db_model.png)
+
 ## Implemented Marts
 
 - `mart_exec_scorecard_weekly`
