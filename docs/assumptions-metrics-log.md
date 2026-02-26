@@ -12,7 +12,7 @@
 | A-06 | Retention = strict point-in-time W+4 | Confirmed | 2026-02-26 |
 | A-07 | Post-deactivation activity is excluded from KPI logic | Confirmed | 2026-02-26 |
 
-## Metrics (MVP)
+## Metrics
 
 | ID | Metric | Business question | Definition | Grain | Window |
 |---|---|---|---|---|---|

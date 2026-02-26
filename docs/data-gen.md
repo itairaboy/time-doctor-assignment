@@ -4,22 +4,22 @@
 - Stage: 2
 - Last updated: 2026-02-26
 
-## Locked Definitions
+## Definitions
 - Active user: >=1 key event in calendar week
 - Retention lens: user retention primary, account retention secondary
 - Transformation approach: SQL-only MVP
 - Time standard: UTC
 - Out of scope: employee monitoring, time tracking
 
-Note: canonical entities, relationships, and taxonomy live in `docs/data-model.md`.
+Note: relationships and logic live in `docs/data-model.md`.
 
 ## Generation Parameters
 
 | Parameter | Value | Notes |
 |---|---|---|
 | Random seed | 22 | Reproducibility |
-| Date window start | 2025-08-01 | Fixed full-month window |
-| Date window end | 2026-01-31 | Fixed full-month window |
+| Date window start | 2025-08-01 | Fixed window |
+| Date window end | 2026-02-26 | Fixed window |
 | Accounts count | 80 | Medium-size dataset |
 | Users per account (min-max) | 8-18 | Targets ~1000 total users |
 | Projects per account (min-max) | 4-8 | Balanced volume |
@@ -28,11 +28,11 @@ Note: canonical entities, relationships, and taxonomy live in `docs/data-model.m
 | Output format | CSV | Files exported to `data/raw/` |
 
 ## Lifecycle Rules
-- `created_at_utc <= activated_at_utc` (users)
+- `created_at_utc <= activated_at_utc`
 - `created_at_utc <= completed_at_utc` when project/task is closed
 - `event_at_utc <= ingested_at_utc`
 - Task completion events only for tasks in `done` status
-- FK consistency across all generated tables
+- FK consistency
 
 ## Imperfections Plan
 
@@ -53,8 +53,3 @@ Note: canonical entities, relationships, and taxonomy live in `docs/data-model.m
 ## Stage 2 Deliverables
 - Raw data files: `accounts.csv`, `users.csv`, `projects.csv`, `tasks.csv`, `events.csv`
 - Generation code under `python/synthetic_data/`
-- Basic run summary (row counts per table)
-
-## Open Decisions
-- Canonical definition of handoff for interpretation
-- Blocker severity/SLA thresholds

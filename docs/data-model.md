@@ -78,10 +78,6 @@ This model represents a B2B Project Management SaaS where teams manage client wo
 - `priority`: `low`, `medium`, `high`, `critical`
 
 ## Data Imperfections
-- Missing values (in nullable fields)
+- Missing values
 - Outliers in dates and cycle times
 - Late-arriving events (`ingested_at_utc` > `event_at_utc`)
-
-## Open Decisions
-- Canonical definition of handoff
-- Blocker severity/SLA thresholds
