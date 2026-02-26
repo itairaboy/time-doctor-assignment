@@ -1,7 +1,7 @@
 # Config
 SEED = 22
 DATE_START = "2025-08-01"
-DATE_END = "2026-01-31"
+DATE_END = "2026-02-26"
 OUTPUT_DIR = "data/raw"
 
 # Scale

@@ -1,6 +1,6 @@
 # Senior Data Analyst Assignment
 
-This repository contains my work for the Senior Data Analyst assignment.
+This repository contains my end-to-end work for a Senior Data Analyst assignment.
 
 ## Context
 
@@ -8,60 +8,71 @@ This repository contains my work for the Senior Data Analyst assignment.
 - Focus: product usage, engagement, retention, and productivity
 - Out of scope: employee monitoring and time tracking
 
-## Progress by Stage
+## Stages
 
-- Stage 1 - Setup and data model: completed
-- Stage 2 - Synthetic data: completed
-- Stage 3 - Transformations and metrics: in progress (MVP implemented)
-- Stage 4 - Dashboard: pending
-- Stage 5 - Monitoring and recommendations: pending
+- Stage 1 - Setup and data model
+- Stage 2 - Synthetic data
+- Stage 3 - Transformations and metrics
+- Stage 4 - Dashboard
+- Stage 5 - Monitoring and recommendations
 
 ## Repository Structure
 
-- `docs/data-model.md` - entities, relationships, taxonomy, and assumptions
-- `docs/data-gen.md` - generation plan, parameters, imperfections, and guardrails
+- `docs/data-model.md` - canonical entities, relationships, taxonomy
+- `docs/data-gen.md` - synthetic generation parameters and imperfections
 - `docs/assumptions-metrics-log.md` - assumptions and metrics log
+- `docs/kpi-definitions.md` - KPI relevance and limitations
 - `python/synthetic_data/` - synthetic data generators and config
-- `python/pipeline/run_models.py` - SQL model runner (DuckDB)
+- `python/pipeline/run_models.py` - builds SQL models into DuckDB
+- `python/pipeline/publish_to_postgres.py` - publishes marts to Postgres `reporting` schema
 - `models/staging/` - raw standardization models (`stg_*`)
-- `models/intermediate/` - enriched and metric-foundation models (`int_*`)
+- `models/intermediate/` - enriched metric foundations (`int_*`)
 - `models/marts/` - analytics-ready marts (`mart_*`)
-- `data/raw/` - generated raw CSV files
-- `data/project.duckdb` - local DuckDB database
+- `docker-compose.yml` - Metabase + Postgres reporting stack
+- `data/raw/` - generated source CSVs
+- `data/pipeline.duckdb` - transformation database
+- `data/reporting.duckdb` - optional BI copy
 
-## Generate Synthetic Data
+## Quickstart
 
-From repository root:
+1) Generate synthetic data
 
 ```bash
 PYTHONPATH=python .venv/bin/python -m synthetic_data.main
 ```
 
-Alternative:
-
-```bash
-PYTHONPATH=python python3 -m synthetic_data.main
-```
-
-Generated raw files are written to:
-
-- `data/raw/accounts.csv`
-- `data/raw/users.csv`
-- `data/raw/projects.csv`
-- `data/raw/tasks.csv`
-- `data/raw/events.csv`
-
-## Run Transformations
-
-Build all SQL layers into DuckDB:
+2) Run transformation pipeline (DuckDB)
 
 ```bash
 .venv/bin/python python/pipeline/run_models.py
 ```
 
-The pipeline builds:
+3) Start reporting stack (Postgres + Metabase)
 
-- Staging views (`stg_*`)
-- Intermediate views (`int_*`) using dependency-aware ordering
-- Mart tables (`mart_*`)
+```bash
+docker compose up -d
+```
 
+4) Publish marts from DuckDB to Postgres
+
+```bash
+.venv/bin/python python/pipeline/publish_to_postgres.py
+```
+
+5) Open Metabase
+
+- URL: `http://localhost:3000`
+- Database engine: PostgreSQL
+- Host: `reporting-db`
+- Port: `5432`
+- DB: `reporting`
+- User: `reporting_user`
+- Password: `reporting_pass`
+- Schema: `reporting`
+
+## Implemented Marts
+
+- `mart_exec_scorecard_weekly`
+- `mart_user_activity_weekly`
+- `mart_user_retention_w4`
+- `mart_task_productivity_weekly`

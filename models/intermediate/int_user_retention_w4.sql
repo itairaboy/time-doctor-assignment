@@ -1,10 +1,6 @@
 -- Grain: 1 row per user
 
-with params as (
-    select timestamptz '2026-01-31 00:00:00+00:00' as fixed_date_utc
-),
-
-active_weeks as (
+with active_weeks as (
     select
         user_id,
         account_id,
@@ -48,5 +44,4 @@ from cohorts c
 left join active_weeks a
     on c.user_id = a.user_id
     and a.activity_week_start_utc = c.cohort_week_start_utc + interval '4 weeks'
-cross join params p
-where c.cohort_week_start_utc + interval '5 weeks' <= p.fixed_date_utc -- Only full weeks
+where c.cohort_week_start_utc + interval '5 weeks' <= current_timestamp -- Only full weeks

@@ -2,10 +2,10 @@
 
 - Status: Draft
 - Stage: 2
-- Last updated: 2026-02-24
+- Last updated: 2026-02-26
 
 ## Locked Definitions
-- Active user: >=1 key event in trailing 7 days
+- Active user: >=1 key event in calendar week
 - Retention lens: user retention primary, account retention secondary
 - Transformation approach: SQL-only MVP
 - Time standard: UTC

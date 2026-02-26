@@ -1,7 +1,7 @@
 import duckdb
 from pathlib import Path
 
-DB_PATH = "data/project.duckdb"
+DB_PATH = "data/pipeline.duckdb"
 
 layers = [
     ("models/staging", "stg_*.sql", "view"),
