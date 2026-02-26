@@ -22,16 +22,16 @@ This repository contains my end-to-end work for a Senior Data Analyst assignment
 - [docs/data-gen.md](docs/data-gen.md) - synthetic generation parameters and imperfections
 - [docs/assumptions-metrics-log.md](docs/assumptions-metrics-log.md) - assumptions and metrics log
 - [docs/kpi-definitions.md](docs/kpi-definitions.md) - KPI relevance and limitations
-- `python/synthetic_data/` - synthetic data generators and config
+- [python/synthetic_data/](python/synthetic_data/) - synthetic data generators and config
 - [python/pipeline/run_models.py](python/pipeline/run_models.py) - builds SQL models into DuckDB
 - [python/pipeline/publish_to_postgres.py](python/pipeline/publish_to_postgres.py) - publishes marts to Postgres `reporting` schema
-- `models/staging/` - raw standardization models (`stg_*`)
-- `models/intermediate/` - enriched metric foundations (`int_*`)
-- `models/marts/` - analytics-ready marts (`mart_*`)
-- `docker-compose.yml` - Metabase + Postgres reporting stack
-- `data/raw/` - generated source CSVs
-- `data/pipeline.duckdb` - transformation database
-- `data/reporting.duckdb` - optional BI copy
+- [models/staging/](models/staging/) - raw standardization models (`stg_*`)
+- [models/intermediate/](models/intermediate/) - enriched metric foundations (`int_*`)
+- [models/marts/](models/marts/) - analytics-ready marts (`mart_*`)
+- [docker-compose.yml](docker-compose.yml) - Metabase + Postgres reporting stack
+- [data/raw/](data/raw/) - generated source CSVs
+- [data/pipeline.duckdb](data/pipeline.duckdb) - transformation database
+- [data/reporting.duckdb](data/reporting.duckdb) - optional BI copy
 - [dashboard/screenshots](dashboard/screenshots/) - Dashboard screenshots
 
 ## Quickstart
