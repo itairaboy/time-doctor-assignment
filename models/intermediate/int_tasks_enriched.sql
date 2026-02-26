@@ -1,7 +1,3 @@
-with params as (
-    select timestamptz '2026-01-31 00:00:00+00:00' as fixed_date_utc
-)
-
 select
     -- task
     t.task_id,
@@ -42,17 +38,16 @@ select
     (t.task_status = 'blocked' or t.has_blocker) as is_blocked,
     case 
         when t.completed_at_utc is not null then t.due_at_utc < t.completed_at_utc
-        else t.due_at_utc < p2.fixed_date_utc
+        else t.due_at_utc < current_timestamp
     end as is_overdue,
     date_diff('day', t.start_at_utc, t.due_at_utc) > 30 as is_outlier_due_date,
 
     -- derived times/cycles
     date_diff('day', t.created_at_utc, t.start_at_utc) as lead_days,
-    date_diff('day', t.start_at_utc, coalesce(t.completed_at_utc, p2.fixed_date_utc)) as cycle_days,
-    date_diff('day', t.due_at_utc, coalesce(t.completed_at_utc, p2.fixed_date_utc)) as days_past_due -- negative means completed early
+    date_diff('day', t.start_at_utc, coalesce(t.completed_at_utc, current_timestamp)) as cycle_days,
+    date_diff('day', t.due_at_utc, coalesce(t.completed_at_utc, current_timestamp)) as days_past_due -- negative means completed early
 
 from stg_tasks t
 left join stg_projects p on t.project_id = p.project_id
 left join stg_accounts a on t.account_id = a.account_id
 left join stg_users u on t.assignee_user_id = u.user_id
-cross join params p2
